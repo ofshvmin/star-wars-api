@@ -2,16 +2,17 @@ import { useState } from 'react'
 
 import './App.css'
 
-import { index } from './services/sw-api'
+import { getAllStarships } from './services/sw-api'
 
 function App() {
   const [starships, setStarships] = useState([])
 
+  async function helper () {
+    const APIstarships = await getAllStarships()
+    setStarships(APIstarships)
+  }
 
-  //test of service function to call api
-  //api is currently down -- resume test at later date
-  index()
-
+  helper()
 
   return (
     <>
