@@ -1,5 +1,5 @@
 
-async function getAllStarships() {
+async function index () {
   try {
     const swApiResponse = await fetch(`https://swapi.dev/api/starships`)
     
@@ -11,7 +11,7 @@ async function getAllStarships() {
 }
 
 export {
-  getAllStarships
+  index 
 }
 
 // {

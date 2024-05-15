@@ -1,24 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 
-import { getAllStarships } from './services/sw-api'
+import * as swapiService from './services/sw-api'
 
 function App() {
   const [starships, setStarships] = useState([])
 
-  async function helper () {
-    const APIstarships = await getAllStarships()
-    setStarships(APIstarships)
-  }
-
-  helper()
-
+  useEffect(() => {
+    const fetchAllStarships = async () => {
+      const data = await swapiService.index()
+      setStarships(data)
+    }
+  fetchAllStarships()
+  }, []) 
+  
+  
   return (
     <>
 
     </>
   )
 }
+
 
 export default App
