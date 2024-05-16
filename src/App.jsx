@@ -23,16 +23,19 @@ function App() {
 
 
   return (
-    <ul>
-    {starships.map((ship, idx) => 
-      
-      <StarshipCard 
+    <main className='list'>
+
+      <ul>
+      {starships.map((ship, idx) => 
+        
+        <StarshipCard 
         key={idx}
         ship={ship}
-      />
-     )}
-    
-    </ul>
+        />
+      )}
+      
+      </ul>
+    </main>
     
   )
 }

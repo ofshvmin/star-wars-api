@@ -1,8 +1,12 @@
 const StarshipCard = (props) => {
   return (  
-    <>
-      <h1> {props.ship.name} </h1>
-    </>
+    <li>
+      <section>  
+        <h3>
+        {props.ship.name}
+        </h3>
+      </section>
+    </li>
   )
 }
 
