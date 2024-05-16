@@ -1,9 +1,9 @@
-const StarshipCard = () => {
+const StarshipCard = (props) => {
   return (  
-    <li>
-      <h1>Starship Card</h1>
-    </li>
+    <>
+      <h1> {props.ship.name} </h1>
+    </>
   )
 }
- 
+
 export default StarshipCard
