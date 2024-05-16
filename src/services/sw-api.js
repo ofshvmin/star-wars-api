@@ -1,11 +1,20 @@
 
 async function index () {
   try {
-    const swApiResponse = await fetch(`https://swapi.dev/api/starships`)
-    
-    const starships = await swApiResponse.json()
+    let starships = []
+    let next = 'https://swapi.dev/api/starships'
+      const swApiResponse = await fetch(next)     
+      const apiData = await swApiResponse.json()
+
+
+      starships = [...starships, ...apiData.results]
+        console.log(starships)
+
+      next = apiData.next
+      console.log(next)
+    // }
     return starships
-  } catch (err) {
+  } catch(err) {
     console.log(err)
   }
 }

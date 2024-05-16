@@ -1,7 +1,13 @@
+// npm modules
 import { useEffect, useState } from 'react'
 
+//css
 import './App.css'
 
+//components
+import StarshipCard from './components/StarshipCard'
+
+//services
 import * as swapiService from './services/sw-api'
 
 function App() {
@@ -15,11 +21,22 @@ function App() {
   fetchAllStarships()
   }, []) 
   
+  // console.log(starships)
   
-  return (
-    <>
 
-    </>
+//current api data needs to be massaged.  
+  //need to make sure we're retrieving all pages
+  //pass only the results to state as starships
+
+  return (
+    <ul>
+     {/* {starships.map(ship =>  */}
+
+      <StarshipCard />
+     {/* )} */}
+    
+    </ul>
+    
   )
 }
 
